@@ -8,7 +8,6 @@ import reactor.core.publisher.Mono;
 
 @Service
 public class QuoteService {
-
   private static final Random random = new Random();
   private static final List<Quote> quotes = List.of(
       new Quote("Content A", "Abigail", Genre.ADVENTURE),
@@ -24,13 +23,13 @@ public class QuoteService {
   }
 
   public Mono<Quote> getRandomQuote() {
-    return Mono.just(quotes.get(random.nextInt(quotes.size() - 1)));
+    return Mono.just(quotes.get(random.nextInt(quotes.size()-1)));
   }
 
   public Mono<Quote> getRandomQuoteByGenre(Genre genre) {
     var quotesForGenre = quotes.stream()
         .filter(quote -> quote.genre().equals(genre))
         .toList();
-    return Mono.just(quotesForGenre.get(random.nextInt(quotesForGenre.size() - 1)));
+    return Mono.just(quotesForGenre.get(random.nextInt(quotesForGenre.size()-1)));
   }
 }

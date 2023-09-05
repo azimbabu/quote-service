@@ -11,7 +11,6 @@ import reactor.core.publisher.Mono;
 
 @RestController
 public class QuoteController {
-
   private final QuoteService quoteService;
 
   public QuoteController(QuoteService quoteService) {

@@ -11,7 +11,6 @@ import org.springframework.test.web.reactive.server.WebTestClient;
 
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
 class QuoteServiceApplicationTests {
-
   @Autowired
   private WebTestClient webTestClient;
 

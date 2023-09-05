@@ -37,7 +37,7 @@ tasks.named('bootBuildImage') {
             url = project.findProperty("registryUrl")
         }
 
-        if (System.getProperty("os.arch").toLowerCase().startsWith('aarch')) {
+        if (System.getProperty( "os.arch" ).toLowerCase().startsWith('aarch')) {
             // This builder is only for ARM64 systems.
             builder = "dashaun/builder:tiny"
         }

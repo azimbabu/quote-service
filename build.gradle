@@ -29,7 +29,7 @@ tasks.named('test') {
 tasks.named('bootBuildImage') {
     builder = 'paketobuildpacks/builder:tiny'
     imageName = "${project.name}"
-    environment = ['BP_NATIVE_IMAGE': 'true']
+    environment = ['BP_NATIVE_IMAGE': 'true', "BP_NATIVE_IMAGE_BUILD_ARGUMENTS": "-march=compatibility"]
 
     docker {
         publishRegistry {
